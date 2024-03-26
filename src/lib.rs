@@ -41,7 +41,7 @@ pub fn run() -> MyResult<()> {
                 }
 
                 if let Some(num_bytes) = args.bytes {
-                    let mut buffer = vec![0; num_bytes as usize];
+                    let mut buffer = vec![0; num_bytes];
                     let bytes_read = file.read(&mut buffer)?;
                     print!("{}", String::from_utf8_lossy(&buffer[..bytes_read]));
                 } else {
